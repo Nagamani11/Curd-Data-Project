@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include 'cdnlines.html' %}
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+    input[name]{
+      margin-top:10px;
+    }
+  </style>
+  <body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="offset-md-4 col-md-4">
+        <h4>Please Enter Your Details Here!!!</h4>
+        <form method="post" action="{% url 'updated_data' data.id %}">
+          {% csrf_token %}
+        <input type="text" name="fname" class="form-control" placeholder="First Name..." value="{{data.first_name}}">
+        <input type="text" name="lname" class="form-control" placeholder="Last Name..." value="{{data.last_name}}">
+        <input type="email" name="email" class="form-control" placeholder="Email..." value="{{data.email}}">
+        <input type="number" name="exp" class="form-control" placeholder="Experience..." value="{{data.experience}}">
+        <input type="text" name="skill" class="form-control" placeholder="Skill..." value="{{data.skill}}">
+        <input type="number" name="mobile" class="form-control" placeholder="Mobile..." value="{{data.mobile}}">
+        <input type="text" name="company" class="form-control" placeholder="Company..." value="{{data.company}}">
+        <input type="text" name="location" class="form-control" placeholder="Location..." value="{{data.location}}">
+        <div class="text-center mt-2">
+          <input type="Submit" value="Update" class="btn btn-success">
+          <input type="reset" value="Delete" class="btn btn-danger"><br>
+          <a href="{% url 'mainPage' %}" class="btn btn-primary mt-2">Main Page</a>
+        </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% include 'cdnlines.html' %}
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="offset-md-4 col-md-4">
+          <h2 class="text-center">Delete Page!!!</h2>
+          <form  method="post">
+            {% csrf_token %}
+            <div class="jumbotron">
+              <label >Enter Students Roll No: </label>
+              <input type="number" class="form-control" name="student" >
+              <div class="text-center mt-2">
+                <a href="{% url 'deletepage' %}" class="btn btn-danger mt-2">Delete</a>
+                <input type="reset" value="Cancel" class='btn btn-secondary'><br>
+                <a href="{% url 'mainPage' %}" class="btn btn-primary mt-2">Main Page</a>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
